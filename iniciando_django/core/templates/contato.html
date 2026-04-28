@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Contato | Meu Projeto Django</title>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="bg-[#092e20] p-4 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold">django project</span>
+            <div class="space-x-4">
+                <a href="/" class="hover:text-green-400">Home</a>
+                <a href="/contato" class="hover:text-green-400">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden p-8">
+            <h2 class="text-2xl font-bold text-[#092e20] mb-6">Mande uma mensagem</h2>
+
+            <form action="#" method="POST" class="space-y-4">
+                {% csrf_token %}
+                <div>
+                    <label class="block text-sm font-medium">Nome</label>
+                    <input type="text" class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-green-700 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Assunto</label>
+                    <select class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-green-700 outline-none">
+                        <option>Dúvida</option>
+                        <option>Sugestão</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium">Sua Mensagem</label>
+                    <textarea rows="4" class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-green-700 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#092e20] text-white py-2 rounded-md font-bold hover:bg-green-900 transition">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
