@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>404 - Página Não Encontrada</title>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full text-center">
+        <div class="mb-8">
+            <h1 class="text-9xl font-black text-[#092e20] opacity-20">404</h1>
+            <div class="-mt-20">
+                <span class="text-6xl">🔍</span>
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Ué, cadê a página?</h2>
+
+        <p class="text-gray-600 mb-10 leading-relaxed">
+            Parece que essa rota não existe no nosso servidor Django. <br>
+            Talvez você tenha digitado o endereço errado ou a página foi movida para outro lugar.
+        </p>
+
+        <div class="flex flex-col space-y-3">
+            <a href="/" class="bg-[#092e20] text-white px-8 py-4 rounded-xl font-bold hover:bg-green-900 transition shadow-lg transform hover:-translate-y-1">
+                Voltar para a Home
+            </a>
+
+            <a href="/contato" class="text-gray-500 font-semibold hover:text-[#092e20] transition">
+                Reportar um problema
+            </a>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-200">
+            <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">
+                Django Learning Project
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
