@@ -36,7 +36,7 @@
 
             <hr class="border-gray-100 mb-8">
 
-            <div class="space-y-4">
+            <div class="space-y-4 mb-12">
                 <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider">O que estou aprendendo:</h3>
 
                 <div class="flex items-start space-x-3">
@@ -52,26 +52,47 @@
                     </div>
                     <p class="text-gray-700"><strong>MTV Architecture:</strong> Entendendo como Models, Templates e Views se conectam.</p>
                 </div>
+            </div>
 
-                <div class="flex items-start space-x-3">
-                    <div class="mt-1 bg-[#092e20] rounded-full p-1">
-                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    </div>
-                    <p class="text-gray-700"><strong>Tailwind CSS:</strong> Estilização moderna e rápida direto no HTML.</p>
+            <div class="mt-10">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="bg-green-600 w-2 h-6 rounded-full mr-3"></span>
+                    Meus Produtos Cadastrados
+                </h3>
+
+                <div class="overflow-hidden border border-gray-100 rounded-xl">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">Nome do Produto</th>
+                                <th class="px-6 py-3 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-100">
+                            {% for produto in produtos %}
+                            <tr class="hover:bg-green-50 transition-colors group">
+                                <td class="px-6 py-4">
+                                    <a href="{% url 'produto' produto.id %}" class="text-[#092e20] font-semibold group-hover:text-green-700 transition">
+                                        {{ produto.nome }}
+                                    </a>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <span class="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-md font-mono font-bold">
+                                        R$ {{ produto.preco }}
+                                    </span>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="2" class="px-6 py-10 text-center text-gray-400 italic">
+                                    Nenhum produto cadastrado ainda.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <div class="mt-12 text-center">
-                <a href="/contato" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition shadow-md">
-                    Ver página de contato
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="text-center py-10 text-gray-400 text-sm">
-        <p>Desenvolvido com Python & Coragem</p>
-    </footer>
-
-</body>
-</html>
+            <div class="mt-12 text-center border-t border-gray-100 pt-8">
+                <a href="/contato" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-
