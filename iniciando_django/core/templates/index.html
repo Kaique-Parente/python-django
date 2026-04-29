@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Meu Primeiro Projeto Django</title>
+
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 </head>
 <body class="bg-slate-50 font-sans">
 
@@ -29,7 +32,7 @@
             </h2>
 
             <p class="text-gray-600 text-lg leading-relaxed mb-8 text-center">
-                Este site é o marco inicial da minha jornada como desenvolvedor backend.
+                Este site é o marco inicial da minha jornada em Django.
                 Aqui estou aplicando na prática os conceitos fundamentais de <strong>Python</strong>
                 e a estrutura poderosa do framework <strong>Django</strong>.
             </p>
