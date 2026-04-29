@@ -13,6 +13,7 @@ def contato(request):
             data = form.cleaned_data
             print(data)
 
+            form.send_mail()
             messages.success(request, 'Contato enviado com sucesso!')
             return redirect('contato')
         else:
