@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{ produto.nome }} | Detalhes</title>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-5xl w-full bg-white rounded-3xl shadow-sm flex flex-col md:flex-row overflow-hidden border border-gray-100">
+        <div class="md:w-1/2 bg-gray-200 flex items-center justify-center p-20">
+            <div class="text-center text-gray-400">
+                <svg class="w-32 h-32 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <p class="font-medium">Foto do Produto</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 p-12 flex flex-col justify-center">
+            <nav class="mb-6 text-xs text-gray-400 uppercase tracking-widest font-bold">
+                <a href="/" class="hover:text-green-700">Loja</a> / Detalhes
+            </nav>
+            <h1 class="text-4xl font-black text-gray-900 mb-4 leading-none">{{ produto.nome }}</h1>
+            <div class="flex items-center space-x-4 mb-8">
+                <span class="text-3xl font-bold text-green-700 underline decoration-double decoration-green-200">R$ {{ produto.preco }}</span>
+                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Estoque: {{ produto.estoque }}</span>
+            </div>
+            <p class="text-gray-600 mb-10 leading-relaxed">
+                Este produto é gerenciado via Django Admin. Você pode editar o nome, preço e quantidade em estoque diretamente pelo painel administrativo.
+            </p>
+            <div class="space-y-4">
+                <button class="w-full bg-[#092e20] text-white py-4 rounded-xl font-bold shadow-lg hover:shadow-green-900/20 transition active:scale-95">Reservar Item</button>
+                <a href="/" class="block text-center font-bold text-sm text-gray-400 hover:text-gray-900 transition underline underline-offset-4">Voltar para a Vitrine</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
