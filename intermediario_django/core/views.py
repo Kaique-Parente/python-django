@@ -25,8 +25,7 @@ def cadastrar_produto(request):
     if str(request.method) == 'POST':
         form = ProdutoModelForm(request.POST, request.FILES)
         if form.is_valid():
-            data = form.cleaned_data
-            print(data)
+            form.save()
             messages.success(request, 'Produto cadastrado com sucesso!')
             return redirect('cadastrar_produto')
         else:
